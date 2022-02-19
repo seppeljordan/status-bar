@@ -7,7 +7,7 @@
       pkgs = import nixpkgs { inherit system; };
     in {
       devShell."${system}" = pkgs.mkShell {
-        packages = with pkgs; [ cargo nixfmt pkg-config rustfmt ];
+        packages = with pkgs; [ cargo nixfmt pkg-config rustfmt clippy ];
       };
       defaultPackage."${system}" = pkgs.callPackage ./status-bar.nix { };
     };
